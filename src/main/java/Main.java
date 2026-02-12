@@ -11,7 +11,17 @@ public class Main {
 
 // Машина номер 1
         System.out.println("Введите название машины номер 1");
-            car1.name =scanner.nextLine();
+
+        while (true) {
+            String inputName = scanner.nextLine();
+            if (inputName.trim().isEmpty()){
+                System.out.println ("Поле не может быть пустым");
+            } else {
+                car1.name = inputName;
+                break;
+            }
+            }
+
 
         System.out.println("Введите скорость машины номер 1");
 
@@ -43,9 +53,11 @@ public class Main {
 
 // Машина номер 2
         System.out.println("Введите название машины номер 2");
-        while (true){
+        while (true) {
             String inputName = scanner.nextLine();
-            if (car1.name.equalsIgnoreCase((inputName))) {
+            if (inputName.trim().isEmpty()){
+                System.out.println ("Поле не может быть пустым");
+            } else if (car1.name.equalsIgnoreCase((inputName))) {
                 System.out.println("Такая машина уже учавствует в гонке.");
             } else {
                 car2.name = inputName;
@@ -79,9 +91,11 @@ public class Main {
 
         // Машина номер 3
         System.out.println("Введите название машины номер 3");
-        while (true){
+        while (true) {
             String inputName = scanner.nextLine();
-            if (car1.name.equalsIgnoreCase((inputName)) || car2.name.equalsIgnoreCase((inputName))) {
+            if (inputName.trim().isEmpty()){
+                System.out.println ("Поле не может быть пустым");
+            } else if (car1.name.equalsIgnoreCase((inputName)) || car2.name.equalsIgnoreCase((inputName))) {
                 System.out.println("Такая машина уже учавствует в гонке.");
             } else {
                 car3.name = inputName;
